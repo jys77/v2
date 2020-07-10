@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
+import Typical from 'react-typical';
 import { Section, mixins, LogoTitleWrapper } from '../../styles';
 import { LogoTitle, Vc } from '../icons';
 const HeaderWrapper = styled(Section)`
   background-color: #f7f7f7;
+  height: 100vh;
   @media (min-width: 768px) {
     ::after {
       content: '';
@@ -35,7 +37,8 @@ const HeaderWrapper = styled(Section)`
     max-width: 1440px;
     margin: 0 auto;
     height: 100%;
-    ${mixins.flexEvenly}
+    display: flex;
+    flex-flow: row;
     .vc {
       width: 40%;
       position: relative;
@@ -48,9 +51,35 @@ const HeaderWrapper = styled(Section)`
       }
     }
     .intro {
+      @media (max-width: 767px) {
+        margin-left: 0;
+        color: #000;
+        font-size: 1.5rem;
+      }
+      margin-top: 10vh;
       position: relative;
       z-index: 100;
-      margin-left: 10rem;
+      margin-left: 5rem;
+      font-family: 'Poppins', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.5;
+      p:nth-child(1) {
+        font-size: 5rem;
+        @media (max-width: 767px) {
+          font-size: 3rem;
+        }
+      }
+      .typical {
+        display: flex;
+        p {
+          font-size: 2rem;
+          @media (max-width: 767px) {
+            font-size: 1.5rem;
+          }
+        }
+      }
     }
   }
 `;
@@ -78,7 +107,16 @@ export const Header = () => {
           <Vc />
         </div>
         <div className="intro">
-          <p>My Intro</p>
+          <p>Hi!</p>
+          <p>Welcome to my Homepage.</p>
+          <div class="typical">
+            <p>I'm a&#160;</p>
+            <Typical
+              steps={['Web Developer.', 1000, 'Designer.', 1000]}
+              loop={Infinity}
+              wrapper="p"
+            />
+          </div>
         </div>
       </div>
     </HeaderWrapper>
