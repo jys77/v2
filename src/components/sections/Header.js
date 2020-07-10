@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import Typical from 'react-typical';
 import { Section, mixins, LogoTitleWrapper } from '../../styles';
-import { LogoTitle, Vc } from '../icons';
+import { LogoTitle, Vc } from '../svgs';
 const HeaderWrapper = styled(Section)`
   background-color: #f7f7f7;
   height: 100vh;
@@ -11,10 +11,9 @@ const HeaderWrapper = styled(Section)`
       content: '';
       position: absolute;
       width: 68%;
-      height: 100%;
+      height: 100vh;
       top: 0;
       right: 0;
-      bottom: 0;
       background-color: #7bd1ba;
     }
   }
@@ -39,6 +38,7 @@ const HeaderWrapper = styled(Section)`
     height: 100%;
     display: flex;
     flex-flow: row;
+    align-items: center;
     .vc {
       width: 40%;
       position: relative;
@@ -56,8 +56,7 @@ const HeaderWrapper = styled(Section)`
         color: #000;
         font-size: 1.5rem;
       }
-      margin-top: 10vh;
-      position: relative;
+      margin-top: -10rem;
       z-index: 100;
       margin-left: 5rem;
       font-family: 'Poppins', sans-serif;
@@ -112,7 +111,7 @@ export const Header = () => {
           <div class="typical">
             <p>I'm a&#160;</p>
             <Typical
-              steps={['Web Developer.', 1000, 'Designer.', 1000]}
+              steps={['Web Developer.', 1000, 'UX Designer.', 1000, 'Fast Learner.', 1000]}
               loop={Infinity}
               wrapper="p"
             />
