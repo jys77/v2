@@ -6,7 +6,7 @@ import { LogoTitle, Vc } from '../svgs';
 const HeaderWrapper = styled(Section)`
   background-color: #f7f7f7;
   height: 100vh;
-  @media (min-width: 768px) {
+  @media (min-width: 769px) {
     ::after {
       content: '';
       position: absolute;
@@ -46,12 +46,12 @@ const HeaderWrapper = styled(Section)`
       bottom: 0;
       display: flex;
       z-index: 100;
-      @media (max-width: 767px) {
+      @media (max-width: 768px) {
         display: none;
       }
     }
     .intro {
-      @media (max-width: 767px) {
+      @media (max-width: 768px) {
         margin-left: 0;
         color: #000;
         font-size: 1.5rem;
@@ -108,7 +108,7 @@ export const Header = () => {
         <div className="intro">
           <p>Hi!</p>
           <p>Welcome to my Homepage.</p>
-          <div class="typical">
+          <div className="typical">
             <p>I'm a&#160;</p>
             <Typical
               steps={['Web Developer.', 1000, 'UX Designer.', 1000, 'Fast Learner.', 1000]}

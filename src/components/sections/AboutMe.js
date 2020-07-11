@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Section, mixins, BikeBoyWrapper } from '../../styles';
+import { Section, BikeBoyWrapper } from '../../styles';
 import { BikeBoy } from '../svgs';
 const AboutMeWrapper = styled(Section)`
   background-color: #ae8fdb;
