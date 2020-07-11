@@ -1,19 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Section, BikeBoyWrapper } from '../../styles';
+import { useSelector } from 'react-redux';
 import { BikeBoy } from '../svgs';
 const AboutMeWrapper = styled(Section)`
-  background-color: #ae8fdb;
+  background-color: ${(props) => (props.dark ? '#4C3A69' : '#ae8fdb')};
   .content {
     display: flex;
     flex-flow: column;
     max-width: 1440px;
     margin: 0 auto;
+    color: ${(props) => (props.dark ? 'white' : '#404040')};
     .title {
       margin-top: 5rem;
       margin-bottom: 2rem;
       font-family: 'Poppins', sans-serif;
-      color: #404040;
       font-weight: 700;
       font-size: 4rem;
     }
@@ -24,7 +25,6 @@ const AboutMeWrapper = styled(Section)`
         flex-flow: column;
       }
       .paragraph {
-        color: #404040;
         font-size: 1.5rem;
         font-weight: 500;
         width: 50%;
@@ -55,8 +55,9 @@ const AboutMeWrapper = styled(Section)`
 `;
 
 export const AboutMe = () => {
+  const { darkMode } = useSelector((state) => state);
   return (
-    <AboutMeWrapper>
+    <AboutMeWrapper dark={darkMode}>
       <div className="content">
         <div className="title">About Me.</div>
         <div className="aboutMe">

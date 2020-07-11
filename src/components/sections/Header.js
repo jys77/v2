@@ -1,10 +1,12 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import Typical from 'react-typical';
 import { Section, mixins, LogoTitleWrapper } from '../../styles';
 import { LogoTitle, Vc } from '../svgs';
+import { DarkModeToggle } from '../DarkModeToggle';
+import { useSelector } from 'react-redux';
 const HeaderWrapper = styled(Section)`
-  background-color: #f7f7f7;
+  background-color: ${(props) => (props.dark ? '#29272A' : '#f7f7f7')};
   height: 100vh;
   @media (min-width: 769px) {
     ::after {
@@ -14,7 +16,7 @@ const HeaderWrapper = styled(Section)`
       height: 100vh;
       top: 0;
       right: 0;
-      background-color: #7bd1ba;
+      background-color: ${(props) => (props.dark ? '#29272A' : '#7bd1ba')};
     }
   }
   .header {
@@ -26,8 +28,6 @@ const HeaderWrapper = styled(Section)`
       width: 8rem;
       z-index: 100;
       .langs {
-      }
-      .day-night {
       }
     }
   }
@@ -53,7 +53,7 @@ const HeaderWrapper = styled(Section)`
     .intro {
       @media (max-width: 768px) {
         margin-left: 0;
-        color: #000;
+        color: ${(props) => (props.dark ? 'white' : '#404040')};
         font-size: 1.5rem;
       }
       margin-top: -10rem;
@@ -84,21 +84,17 @@ const HeaderWrapper = styled(Section)`
 `;
 
 export const Header = () => {
-  useEffect(() => {
-    const logo = document.querySelectorAll('#logo path');
-    for (let i = 0; i < logo.length; i++) {
-      console.log(`Letter ${i} is ${logo[i].getTotalLength()}`);
-    }
-  }, []);
+  const { darkMode } = useSelector((state) => state);
+
   return (
-    <HeaderWrapper>
+    <HeaderWrapper dark={darkMode}>
       <div className="header">
         <LogoTitleWrapper>
           <LogoTitle />
         </LogoTitleWrapper>
         <div className="toggles">
           <div className="langs">Lang</div>
-          <div className="day-night">Dark mode</div>
+          <DarkModeToggle />
         </div>
       </div>
       <div className="hero">

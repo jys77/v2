@@ -2,8 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { Section, ProjectWrapper } from '../../styles';
 import { GitHub, External } from '../svgs';
+import { useSelector } from 'react-redux';
 const ProjectsWrapper = styled(Section)`
-  background-color: #fbf8b4;
+  background-color: ${(props) => (props.dark ? '#2C2A32' : '#fbf8b4')};
   .content {
     display: flex;
     flex-flow: column;
@@ -13,7 +14,7 @@ const ProjectsWrapper = styled(Section)`
       margin-top: 5rem;
       margin-bottom: 2rem;
       font-family: 'Poppins', sans-serif;
-      color: #404040;
+      color: ${(props) => (props.dark ? 'white' : '#404040')};
       font-weight: 700;
       font-size: 4rem;
     }
@@ -21,11 +22,12 @@ const ProjectsWrapper = styled(Section)`
 `;
 
 export const Projects = () => {
+  const { darkMode } = useSelector((state) => state);
   return (
-    <ProjectsWrapper>
+    <ProjectsWrapper dark={darkMode}>
       <div className="content">
         <div className="title">Some Projects.</div>
-        <ProjectWrapper>
+        <ProjectWrapper dark={darkMode}>
           <div className="project-content">
             <h5 className="project-name">
               <a href="/">Merch Shop</a>
@@ -67,7 +69,7 @@ export const Projects = () => {
             <img src="/images/merch-shop.png" alt="merch-shop" />
           </a>
         </ProjectWrapper>
-        <ProjectWrapper>
+        <ProjectWrapper dark={darkMode}>
           <div className="project-content">
             <h5 className="project-name">
               <a href="/">Merch Shop</a>

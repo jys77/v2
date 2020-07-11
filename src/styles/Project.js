@@ -21,12 +21,12 @@ export const ProjectWrapper = styled.div`
         text-decoration: none;
         font-family: 'Poppins', sans-serif;
         font-size: 2rem;
-        color: #404040;
+        color: ${(props) => (props.dark ? 'white' : '#404040')};
         &:hover {
           background-image: linear-gradient(
             transparent 50%,
-            #72cada 50%,
-            #72cada 85%,
+            ${(props) => (props.dark ? '#9277bd' : '#72cada')} 50%,
+            ${(props) => (props.dark ? '#9277bd' : '#72cada')} 85%,
             transparent 85%,
             transparent 100%
           );
@@ -61,7 +61,7 @@ export const ProjectWrapper = styled.div`
       list-style: none;
       font-family: 'Poppins', sans-serif;
       font-size: 1rem;
-      color: #404040;
+      color: ${(props) => (props.dark ? 'white' : '#404040')};
       li {
         margin-right: 10px;
         margin-bottom: 5px;
@@ -83,6 +83,7 @@ export const ProjectWrapper = styled.div`
         svg {
           width: 22px;
           height: 22px;
+          fill: ${(props) => (props.dark ? 'white' : '#404040')};
         }
       }
     }
@@ -92,17 +93,17 @@ export const ProjectWrapper = styled.div`
     grid-row: 1 / -1;
     position: relative;
     z-index: 1;
-    border: 2px solid #404040;
-    box-shadow: 0.5rem 0.5rem 0 0 #404040;
+    border: 2px solid ${(props) => (props.dark ? 'white' : '#404040')};
+    box-shadow: 0.5rem 0.5rem 0 0 ${(props) => (props.dark ? 'white' : '#404040')};
     transition: all 0.2s ease-in-out;
     &:active {
       transform: translate(0.5rem, 0.5rem);
-      box-shadow: 0 0 0 0 #404040;
+      box-shadow: 0 0 0 0 ${(props) => (props.dark ? 'white' : '#404040')};
     }
     overflow: hidden;
     @media (max-width: 767px) {
       grid-column: 1 / -1;
-      opacity: 0.25;
+      opacity: 0.5;
     }
     img {
       width: 100%;
@@ -114,6 +115,7 @@ export const ProjectWrapper = styled.div`
   &:nth-of-type(even) {
     .project-name {
       text-align: right;
+      color: ${(props) => (props.dark ? 'white' : '#404040')};
     }
     .project-content {
       grid-column: 7 / -1;
@@ -125,6 +127,7 @@ export const ProjectWrapper = styled.div`
     }
     .project-tech {
       justify-content: flex-end;
+      color: ${(props) => (props.dark ? 'white' : '#404040')};
       li {
         margin-left: 10px;
         margin-right: 0;
@@ -134,12 +137,17 @@ export const ProjectWrapper = styled.div`
       justify-content: flex-end;
       margin-left: 0;
       margin-right: -10px;
+      svg {
+        fill: ${(props) => (props.dark ? 'white' : '#404040')};
+      }
     }
     .project-image {
       grid-column: 1 / 8;
+      border: 2px solid ${(props) => (props.dark ? 'white' : '#404040')};
+      box-shadow: 0.5rem 0.5rem 0 0 ${(props) => (props.dark ? 'white' : '#404040')};
       @media (max-width: 767px) {
         grid-column: 1 / -1;
-        opacity: 0.25;
+        opacity: 0.5;
       }
     }
   }
