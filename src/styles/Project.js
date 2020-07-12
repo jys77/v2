@@ -147,6 +147,10 @@ export const ProjectWrapper = styled.div`
       grid-column: 1 / 8;
       border: 2px solid ${(props) => (props.dark ? 'white' : '#404040')};
       box-shadow: 0.5rem 0.5rem 0 0 ${(props) => (props.dark ? 'white' : '#404040')};
+      &:active {
+        transform: translate(0.5rem, 0.5rem);
+        box-shadow: 0 0 0 0 ${(props) => (props.dark ? 'white' : '#404040')};
+      }
       @media (max-width: 767px) {
         grid-column: 1 / -1;
         opacity: 0.5;
