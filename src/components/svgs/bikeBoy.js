@@ -8,7 +8,7 @@ export const BikeBoy = () => (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <g id="undraw_Ride_a_bicycle_2yok 1" clip-path="url(#clip0)">
+    <g id="undraw_Ride_a_bicycle_2yok 1" clipPath="url(#clip0)">
       <path
         id="Vector"
         d="M209.73 115.43C204.25 122.08 202.14 131.43 199.78 140.22C180.78 211.06 133.96 268.04 80.64 308.74C58.06 325.98 30.57 349.1 35.51 380.01C38.17 396.61 49.84 408.83 58.51 422.35C76.7 450.66 82.6 489.14 73.93 523.03C64.07 561.59 36.51 597.57 45.04 636.56C50.3 660.56 68.16 677.64 85.33 692.32C112.117 715.207 139.757 736.647 168.25 756.64C187.35 770.04 207.67 783.08 229.93 784.78C249.53 786.28 268.73 778.83 287.34 771.48C303.6 765.05 320.27 758.36 333.4 745.48C341.97 737.07 348.8 726.22 358.32 719.34C380.68 703.18 409.4 713.42 435.04 720.34C495.54 736.58 560.29 730.65 617.86 703.6C706.17 662.1 773.48 574.95 859.86 528.19C897 508.08 937.4 495.6 971.79 469.7C991.165 454.953 1007.82 436.936 1020.99 416.46C1046.99 376.35 1061.05 325.21 1056.99 275.15C1052.93 225.09 1030.18 176.85 994.45 148.59C956.2 118.34 907.89 112.69 864.37 94.53C819.43 75.77 779.45 43.53 734.94 23.4C698.924 7.15665 659.728 -0.81716 620.228 0.0636141C580.728 0.944389 541.926 10.6574 506.67 28.49C458.23 52.99 409.13 110.15 355.18 114.49C316.74 117.49 239.75 79.01 209.73 115.43Z"
@@ -19,7 +19,7 @@ export const BikeBoy = () => (
           id="Vector_2"
           d="M842.1 448.32C842.1 448.32 859.6 482.67 845.34 501.46C831.08 520.25 846.64 571.46 846.64 571.46"
           stroke="#404040"
-          stroke-miterlimit="10"
+          strokeMiterlimit="10"
         />
         <path
           id="Vector_3"
@@ -30,7 +30,7 @@ export const BikeBoy = () => (
           id="Vector_4"
           d="M851.17 448.32C851.17 448.32 833.67 482.67 847.93 501.46C862.19 520.25 846.63 571.46 846.63 571.46"
           stroke="#404040"
-          stroke-miterlimit="10"
+          strokeMiterlimit="10"
         />
         <path
           id="Vector_5"
@@ -47,7 +47,7 @@ export const BikeBoy = () => (
           id="Vector_7"
           d="M858.3 448.32C858.3 448.32 875.8 482.67 861.54 501.46C847.28 520.25 862.84 571.46 862.84 571.46"
           stroke="#404040"
-          stroke-miterlimit="10"
+          strokeMiterlimit="10"
         />
         <path
           id="Vector_8"
@@ -83,7 +83,7 @@ export const BikeBoy = () => (
           id="Vector_14"
           d="M867.37 448.32C867.37 448.32 849.85 482.67 864.13 501.49C878.41 520.31 862.83 571.49 862.83 571.49"
           stroke="#404040"
-          stroke-miterlimit="10"
+          strokeMiterlimit="10"
         />
         <path
           id="Vector_15"
@@ -114,19 +114,19 @@ export const BikeBoy = () => (
           id="Vector_20"
           d="M859.29 491.26C859.29 491.26 869.82 474.66 884.61 474.26"
           stroke="#404040"
-          stroke-miterlimit="10"
+          strokeMiterlimit="10"
         />
         <path
           id="Vector_21"
           d="M851.09 481.23C851.09 481.23 840.56 464.63 825.77 464.23"
           stroke="#404040"
-          stroke-miterlimit="10"
+          strokeMiterlimit="10"
         />
         <path
           id="Vector_22"
           d="M849.72 504.93C849.72 504.93 860.25 488.33 875.04 487.93"
           stroke="#404040"
-          stroke-miterlimit="10"
+          strokeMiterlimit="10"
         />
         <path
           id="Vector_23"
@@ -142,7 +142,7 @@ export const BikeBoy = () => (
           id="Vector_25"
           d="M857.47 510.4C857.47 510.4 846.94 493.8 832.15 493.4"
           stroke="#404040"
-          stroke-miterlimit="10"
+          strokeMiterlimit="10"
         />
         <path
           id="Vector_26"
@@ -492,8 +492,8 @@ export const BikeBoy = () => (
         y2="638.5"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#6CCCD2" stop-opacity="0.62" />
-        <stop offset="1" stop-color="#AFD1D3" stop-opacity="0.38" />
+        <stop stopColor="#6CCCD2" stopOpacity="0.62" />
+        <stop offset="1" stopColor="#AFD1D3" stopOpacity="0.38" />
       </linearGradient>
       <clipPath id="clip0">
         <rect width="1057.7" height="784.98" fill="white" />

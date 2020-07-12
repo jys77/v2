@@ -19,10 +19,12 @@ const HeaderWrapper = styled(Section)`
       height: 100vh;
       top: 0;
       right: 0;
-      background-color: ${(props) => (props.dark ? '#29272A' : '#7bd1ba')};
+      background-color: ${(props) => (props.dark ? '#774069' : '#7bd1ba')};
     }
   }
   .header {
+    position: relative;
+    z-index: 200;
     max-width: 1440px;
     margin: 0 auto;
     ${mixins.flexBetween};
