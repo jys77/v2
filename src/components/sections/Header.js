@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { init } from 'ityped';
 import { Section, mixins, LogoTitleWrapper } from '../../styles';
 import { LogoTitle, Vc } from '../svgs';
 import { DarkModeToggle } from '../DarkModeToggle';
 import { useSelector, useDispatch } from 'react-redux';
 import { Langs } from '../../langs';
 import { changeLang } from '../../actions';
+import { TypingEN } from '../typing.en';
+import { TypingZH } from '../typing.zh';
 const HeaderWrapper = styled(Section)`
   background-color: ${(props) => (props.dark ? '#29272A' : '#f7f7f7')};
   height: 100vh;
@@ -112,14 +113,6 @@ export const Header = () => {
     dispatch(changeLang(language));
   }, [dispatch, language]);
 
-  useEffect(() => {
-    const typing = document.querySelector('#typing');
-    init(typing, {
-      showCursor: true,
-      strings: ['Web Developer.', 'UX Designer.', 'Fast Learner.'],
-    });
-  }, []);
-
   return (
     <HeaderWrapper dark={darkMode}>
       <div className="header">
@@ -147,10 +140,17 @@ export const Header = () => {
         <div className="intro">
           <p>{lang.header.greetings[0]}</p>
           <p>{lang.header.greetings[1]}</p>
-          <div className="typical">
-            <p>I'm a&#160;</p>
-            <p id="typing" />
-          </div>
+          {locale && locale === 'zh' ? (
+            <div className="typical">
+              <p>我会</p>
+              <TypingZH />
+            </div>
+          ) : (
+            <div className="typical">
+              <p>I'm a&#160;</p>
+              <TypingEN />
+            </div>
+          )}
         </div>
       </div>
     </HeaderWrapper>

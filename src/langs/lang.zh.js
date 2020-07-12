@@ -43,7 +43,7 @@ export default {
     ],
   },
   contact: {
-    title: '保持联络喔！',
+    title: '欢迎垂询!',
     button: 'Say Hello',
   },
 };
