@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Typical from 'react-typical';
 import { Section, mixins, LogoTitleWrapper } from '../../styles';
 import { LogoTitle, Vc } from '../svgs';
 import { DarkModeToggle } from '../DarkModeToggle';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { Langs } from '../../langs';
+import { changeLang } from '../../actions';
 const HeaderWrapper = styled(Section)`
   background-color: ${(props) => (props.dark ? '#29272A' : '#f7f7f7')};
   height: 100vh;
@@ -24,10 +26,26 @@ const HeaderWrapper = styled(Section)`
     margin: 0 auto;
     ${mixins.flexBetween};
     .toggles {
+      @media (max-width: 767px) {
+        margin-left: 2rem;
+      }
       ${mixins.flexBetween};
       width: 8rem;
       z-index: 100;
       .langs {
+        select {
+          background-color: transparent;
+          -webkit-appearance: none;
+          font-size: 0.8rem;
+          border: none;
+        }
+        .arrow {
+          position: absolute;
+          right: 0.4rem;
+          top: 65%;
+          margin-top: -0.4rem;
+          font-size: 0.4rem;
+        }
       }
     }
   }
@@ -84,8 +102,13 @@ const HeaderWrapper = styled(Section)`
 `;
 
 export const Header = () => {
-  const { darkMode } = useSelector((state) => state);
+  const { darkMode, locale } = useSelector((state) => state);
+  const dispatch = useDispatch();
+  const [lang, setLang] = useState(locale);
 
+  useEffect(() => {
+    dispatch(changeLang(lang));
+  }, [dispatch, lang]);
   return (
     <HeaderWrapper dark={darkMode}>
       <div className="header">
@@ -93,7 +116,16 @@ export const Header = () => {
           <LogoTitle />
         </LogoTitleWrapper>
         <div className="toggles">
-          <div className="langs">Lang</div>
+          <div className="langs">
+            <select value={lang} onChange={(e) => setLang(e.target.value)}>
+              {Object.keys(Langs).map((l) => (
+                <option key={l} value={l}>
+                  {Langs[l].title}
+                </option>
+              ))}
+            </select>
+            <div className="arrow" />
+          </div>
           <DarkModeToggle />
         </div>
       </div>
