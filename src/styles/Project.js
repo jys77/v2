@@ -22,24 +22,21 @@ export const ProjectWrapper = styled.div`
         font-family: 'Poppins', 'Microsoft YaHei', sans-serif;
         font-size: 2rem;
         color: ${(props) => (props.dark ? 'white' : '#404040')};
+        transition: 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+        background-image: linear-gradient(
+          transparent 50%,
+          ${(props) => (props.dark ? '#9277bd' : '#72cada')} 50%,
+          ${(props) => (props.dark ? '#9277bd' : '#72cada')} 85%,
+          transparent 85%,
+          transparent 100%
+        );
+        background-size: 0% 100%;
+        background-repeat: no-repeat;
         @media (max-width: 767px) {
-          background-image: linear-gradient(
-            transparent 50%,
-            ${(props) => (props.dark ? '#9277bd' : '#72cada')} 50%,
-            ${(props) => (props.dark ? '#9277bd' : '#72cada')} 85%,
-            transparent 85%,
-            transparent 100%
-          );
           background-size: 100% 100%;
         }
-        &:hover {
-          background-image: linear-gradient(
-            transparent 50%,
-            ${(props) => (props.dark ? '#9277bd' : '#72cada')} 50%,
-            ${(props) => (props.dark ? '#9277bd' : '#72cada')} 85%,
-            transparent 85%,
-            transparent 100%
-          );
+        &:hover,
+        &:focus {
           background-size: 100% 100%;
         }
       }
@@ -92,6 +89,11 @@ export const ProjectWrapper = styled.div`
       color: #404040;
       a {
         padding: 10px;
+        transition: transform 0.3s ease-in-out;
+        &:hover,
+        &:focus {
+          transform: scale(1.1);
+        }
         svg {
           width: 22px;
           height: 22px;
