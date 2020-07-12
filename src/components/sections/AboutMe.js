@@ -14,7 +14,7 @@ const AboutMeWrapper = styled(Section)`
     .title {
       margin-top: 5rem;
       margin-bottom: 2rem;
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Poppins', 'Microsoft YaHei', sans-serif;
       font-weight: 700;
       font-size: 4rem;
     }
@@ -25,6 +25,7 @@ const AboutMeWrapper = styled(Section)`
         flex-flow: column;
       }
       .paragraph {
+        font-family: sans-serif, 'Microsoft YaHei';
         font-size: 1.5rem;
         font-weight: 500;
         width: 50%;
@@ -38,12 +39,6 @@ const AboutMeWrapper = styled(Section)`
           li {
             margin-bottom: 10px;
             font-size: 1.1rem;
-            ::before {
-              content: '▹';
-              margin-right: 0.3rem;
-              color: #404040;
-              font-size: 1.2rem;
-            }
           }
         }
         @media (max-width: 767px) {
@@ -55,29 +50,21 @@ const AboutMeWrapper = styled(Section)`
 `;
 
 export const AboutMe = () => {
-  const { darkMode } = useSelector((state) => state);
+  const { darkMode, lang } = useSelector((state) => state);
   return (
     <AboutMeWrapper dark={darkMode}>
       <div className="content">
-        <div className="title">About Me.</div>
+        <div className="title">{lang.aboutMe.title}</div>
         <div className="aboutMe">
           <div className="paragraph">
-            <p>
-              Hello! I'm Yunsheng Jiang, an enthusiastic web developer and fast learner. I recently
-              graduated from the University of Ottawa with a master's degree in Electrical and
-              Computer Engineering. I love hunting and learning new stuff from the Internet and
-              trying out different techs.
-            </p>
+            <p>{lang.aboutMe.content[0]}</p>
             <br></br>
-            <p>Here are a few technologies I've been working with recently:</p>
+            <p>{lang.aboutMe.content[1]}</p>
             <br></br>
             <ul>
-              <li>React</li>
-              <li>JavaScript</li>
-              <li>Node.js</li>
-              <li>Vue</li>
-              <li>MERN Stack</li>
-              <li>HTML / (S)CSS</li>
+              {lang.aboutMe.skills.map((skill, idx) => (
+                <li key={idx}>{skill}</li>
+              ))}
             </ul>
           </div>
           <BikeBoyWrapper>

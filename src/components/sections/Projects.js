@@ -13,7 +13,7 @@ const ProjectsWrapper = styled(Section)`
     .title {
       margin-top: 5rem;
       margin-bottom: 2rem;
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Poppins', 'Microsoft YaHei', sans-serif;
       color: ${(props) => (props.dark ? 'white' : '#404040')};
       font-weight: 700;
       font-size: 4rem;
@@ -22,95 +22,54 @@ const ProjectsWrapper = styled(Section)`
 `;
 
 export const Projects = () => {
-  const { darkMode } = useSelector((state) => state);
+  const { darkMode, lang } = useSelector((state) => state);
   return (
     <ProjectsWrapper dark={darkMode}>
       <div className="content">
-        <div className="title">Some Projects.</div>
-        <ProjectWrapper dark={darkMode}>
-          <div className="project-content">
-            <h5 className="project-name">
-              <a href="/">Merch Shop</a>
-            </h5>
-            <div className="project-description">
-              <p>
-                An E-Commerce web application built with MERN Stack and equipped with features such
-                as API calling, form submission, login/register, PayPal sandbox, and other features,
-                which completes and simulates a whole process of online shopping and product
-                ordering experience.
-              </p>
+        <div className="title">{lang.projects.title}</div>
+        {lang.projects.projectList.map((project, idx) => (
+          <ProjectWrapper key={idx} dark={darkMode}>
+            <div className="project-content">
+              <h5 className="project-name">
+                <a href="/">{project.title}</a>
+              </h5>
+              <div className="project-description">
+                <p>{project.desc}</p>
+              </div>
+              <ul className="project-tech">
+                {project.tech.map((t, tIdx) => (
+                  <li key={idx + '-' + tIdx}>{t}</li>
+                ))}
+              </ul>
+              <div className="project-links">
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="nofollow noopener noreferrer"
+                  arial-label="GitHub Link"
+                >
+                  <GitHub />
+                </a>
+                <a
+                  href={project.external}
+                  target="_blank"
+                  rel="nofollow noopener noreferrer"
+                  arial-label="External Link"
+                >
+                  <External />
+                </a>
+              </div>
             </div>
-            <ul className="project-tech">
-              <li>React</li>
-              <li>Express</li>
-              <li>MongoDB</li>
-              <li>Node.js</li>
-            </ul>
-            <div className="project-links">
-              <a
-                href="/"
-                target="_blank"
-                rel="nofollow noopener noreferrer"
-                arial-label="GitHub Link"
-              >
-                <GitHub />
-              </a>
-              <a
-                href="/"
-                target="_blank"
-                rel="nofollow noopener noreferrer"
-                arial-label="External Link"
-              >
-                <External />
-              </a>
-            </div>
-          </div>
-          <a className="project-image" href="/">
-            <img src="/images/merch-shop.png" alt="merch-shop" />
-          </a>
-        </ProjectWrapper>
-        <ProjectWrapper dark={darkMode}>
-          <div className="project-content">
-            <h5 className="project-name">
-              <a href="/">Merch Shop</a>
-            </h5>
-            <div className="project-description">
-              <p>
-                An E-Commerce web application built with MERN Stack and equipped with features such
-                as API calling, form submission, login/register, PayPal sandbox, and other features,
-                which completes and simulates a whole process of online shopping and product
-                ordering experience.
-              </p>
-            </div>
-            <ul className="project-tech">
-              <li>React</li>
-              <li>Express</li>
-              <li>MongoDB</li>
-              <li>Node.js</li>
-            </ul>
-            <div className="project-links">
-              <a
-                href="/"
-                target="_blank"
-                rel="nofollow noopener noreferrer"
-                arial-label="GitHub Link"
-              >
-                <GitHub />
-              </a>
-              <a
-                href="/"
-                target="_blank"
-                rel="nofollow noopener noreferrer"
-                arial-label="External Link"
-              >
-                <External />
-              </a>
-            </div>
-          </div>
-          <a className="project-image" href="/">
-            <img src="/images/merch-shop.png" alt="merch-shop" />
-          </a>
-        </ProjectWrapper>
+            <a
+              className="project-image"
+              href={project.external ? project.external : project.github ? project.github : '/'}
+              target="_blank"
+              rel="nofollow noopener noreferrer"
+            >
+              <img src={project.image} alt={project.title} />
+            </a>
+          </ProjectWrapper>
+        ))}
       </div>
     </ProjectsWrapper>
   );

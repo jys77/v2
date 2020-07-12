@@ -19,7 +19,7 @@ export const ProjectWrapper = styled.div`
       margin: 1rem 0rem 1rem;
       a {
         text-decoration: none;
-        font-family: 'Poppins', sans-serif;
+        font-family: 'Poppins', 'Microsoft YaHei', sans-serif;
         font-size: 2rem;
         color: ${(props) => (props.dark ? 'white' : '#404040')};
         &:hover {
@@ -37,15 +37,17 @@ export const ProjectWrapper = styled.div`
     .project-description {
       position: relative;
       z-index: 2;
-      background-color: #fff;
-      color: #404040;
-      border: 2px solid #404040;
-      border-radius: 10px;
-      padding: 1rem;
-      line-height: 1.5;
+      background-color: ${(props) => (props.dark ? '#774069' : '#7bd1ba')};
+      color: white;
+      border: 2px solid transparent;
+      padding: 2rem;
+      line-height: 2;
+      box-shadow: 0.5rem 0.5rem 0 0 ${(props) => (props.dark ? 'white' : '#404040')};
+      font-family: sans-serif, 'Microsoft YaHei';
       @media (max-width: 767px) {
         padding: 1.5rem 0;
         padding: 0.5rem;
+        opacity: 0.9;
       }
       p {
         margin: 0;
@@ -59,7 +61,7 @@ export const ProjectWrapper = styled.div`
       padding: 0;
       margin: 25px 0 10px;
       list-style: none;
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Poppins', 'Microsoft YaHei', sans-serif;
       font-size: 1rem;
       color: ${(props) => (props.dark ? 'white' : '#404040')};
       li {

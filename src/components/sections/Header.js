@@ -38,6 +38,14 @@ const HeaderWrapper = styled(Section)`
           -webkit-appearance: none;
           font-size: 0.8rem;
           border: none;
+          color: white;
+          @media (max-width: 768px) {
+            color: #404040;
+          }
+          option {
+            color: black;
+            background: white;
+          }
         }
         .arrow {
           position: absolute;
@@ -77,7 +85,7 @@ const HeaderWrapper = styled(Section)`
       margin-top: -10rem;
       z-index: 100;
       margin-left: 5rem;
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Poppins', 'Microsoft YaHei', sans-serif;
       font-size: 2rem;
       font-weight: 700;
       color: #fff;
@@ -102,13 +110,14 @@ const HeaderWrapper = styled(Section)`
 `;
 
 export const Header = () => {
-  const { darkMode, locale } = useSelector((state) => state);
+  const { darkMode, locale, lang } = useSelector((state) => state);
   const dispatch = useDispatch();
-  const [lang, setLang] = useState(locale);
+  const [language, setLanguage] = useState(locale);
 
   useEffect(() => {
-    dispatch(changeLang(lang));
-  }, [dispatch, lang]);
+    dispatch(changeLang(language));
+  }, [dispatch, language]);
+
   return (
     <HeaderWrapper dark={darkMode}>
       <div className="header">
@@ -117,7 +126,7 @@ export const Header = () => {
         </LogoTitleWrapper>
         <div className="toggles">
           <div className="langs">
-            <select value={lang} onChange={(e) => setLang(e.target.value)}>
+            <select value={language} onChange={(e) => setLanguage(e.target.value)}>
               {Object.keys(Langs).map((l) => (
                 <option key={l} value={l}>
                   {Langs[l].title}
@@ -134,8 +143,8 @@ export const Header = () => {
           <Vc />
         </div>
         <div className="intro">
-          <p>Hi!</p>
-          <p>Welcome to my Homepage.</p>
+          <p>{lang.header.greetings[0]}</p>
+          <p>{lang.header.greetings[1]}</p>
           <div className="typical">
             <p>I'm a&#160;</p>
             <Typical
