@@ -22,6 +22,16 @@ export const ProjectWrapper = styled.div`
         font-family: 'Poppins', 'Microsoft YaHei', sans-serif;
         font-size: 2rem;
         color: ${(props) => (props.dark ? 'white' : '#404040')};
+        @media (max-width: 767px) {
+          background-image: linear-gradient(
+            transparent 50%,
+            ${(props) => (props.dark ? '#9277bd' : '#72cada')} 50%,
+            ${(props) => (props.dark ? '#9277bd' : '#72cada')} 85%,
+            transparent 85%,
+            transparent 100%
+          );
+          background-size: 100% 100%;
+        }
         &:hover {
           background-image: linear-gradient(
             transparent 50%,
@@ -47,7 +57,7 @@ export const ProjectWrapper = styled.div`
       @media (max-width: 767px) {
         padding: 1.5rem 0;
         padding: 0.5rem;
-        opacity: 0.9;
+        opacity: 0.8;
       }
       p {
         margin: 0;

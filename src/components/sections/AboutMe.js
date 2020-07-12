@@ -16,7 +16,7 @@ const AboutMeWrapper = styled(Section)`
       margin-bottom: 2rem;
       font-family: 'Poppins', 'Microsoft YaHei', sans-serif;
       font-weight: 700;
-      font-size: 4rem;
+      font-size: 3.5rem;
     }
     .aboutMe {
       display: flex;

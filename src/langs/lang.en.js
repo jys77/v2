@@ -42,4 +42,8 @@ export default {
       },
     ],
   },
+  contact: {
+    title: 'Get In Touch.',
+    button: 'Say Hello',
+  },
 };

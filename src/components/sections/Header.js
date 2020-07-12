@@ -34,13 +34,14 @@ const HeaderWrapper = styled(Section)`
       z-index: 100;
       .langs {
         select {
+          font-family: 'Poppins', 'Microsoft YaHei', sans-serif;
           background-color: transparent;
           -webkit-appearance: none;
           font-size: 0.8rem;
           border: none;
           color: white;
           @media (max-width: 768px) {
-            color: #404040;
+            color: ${(props) => (props.dark ? 'white' : '#404040')};
           }
           option {
             color: black;

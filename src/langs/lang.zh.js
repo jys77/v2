@@ -33,7 +33,7 @@ export default {
       },
       {
         title: '记忆连连看',
-        image: '/images//memory-match.png',
+        image: '/images/memory-match.png',
         desc:
           '一个记忆翻牌匹配游戏。匹配的对象是众多的前端技术图标。支持中英文切换。游戏共用三种难度，每种难度都随机从数据库中抽取不同的图标和随机位置。支持统计功能，记录每种难度的最佳时间。',
         tech: ['React', 'Redux', 'Webpack', 'Netlify'],
@@ -41,5 +41,9 @@ export default {
         github: 'https://github.com/jys77/memory-match',
       },
     ],
+  },
+  contact: {
+    title: '保持联络喔！',
+    button: 'Say Hello',
   },
 };

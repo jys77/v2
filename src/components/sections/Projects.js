@@ -10,13 +10,14 @@ const ProjectsWrapper = styled(Section)`
     flex-flow: column;
     max-width: 1440px;
     margin: 0 auto;
+    margin-bottom: 100vh;
     .title {
       margin-top: 5rem;
       margin-bottom: 2rem;
       font-family: 'Poppins', 'Microsoft YaHei', sans-serif;
       color: ${(props) => (props.dark ? 'white' : '#404040')};
       font-weight: 700;
-      font-size: 4rem;
+      font-size: 3.5rem;
     }
   }
 `;
@@ -31,7 +32,13 @@ export const Projects = () => {
           <ProjectWrapper key={idx} dark={darkMode}>
             <div className="project-content">
               <h5 className="project-name">
-                <a href="/">{project.title}</a>
+                <a
+                  href={project.external ? project.external : project.github ? project.github : '/'}
+                  target="_blank"
+                  rel="nofollow noopener noreferrer"
+                >
+                  {project.title}
+                </a>
               </h5>
               <div className="project-description">
                 <p>{project.desc}</p>
