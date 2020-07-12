@@ -22,7 +22,7 @@ const Wrapper = styled(Section)`
     width: 60%;
     @media (max-width: 767px) {
       height: 60%;
-      width: 90%;
+      width: 100%;
     }
     .title {
       font-family: 'Poppins', 'Microsoft YaHei', sans-serif;
