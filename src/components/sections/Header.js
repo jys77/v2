@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import Typical from 'react-typical';
+import { init } from 'ityped';
 import { Section, mixins, LogoTitleWrapper } from '../../styles';
 import { LogoTitle, Vc } from '../svgs';
 import { DarkModeToggle } from '../DarkModeToggle';
@@ -46,13 +46,6 @@ const HeaderWrapper = styled(Section)`
             color: black;
             background: white;
           }
-        }
-        .arrow {
-          position: absolute;
-          right: 0.4rem;
-          top: 65%;
-          margin-top: -0.4rem;
-          font-size: 0.4rem;
         }
       }
     }
@@ -118,6 +111,14 @@ export const Header = () => {
     dispatch(changeLang(language));
   }, [dispatch, language]);
 
+  useEffect(() => {
+    const typing = document.querySelector('#typing');
+    init(typing, {
+      showCursor: true,
+      strings: ['Web Developer.', 'UX Designer.', 'Fast Learner.'],
+    });
+  }, []);
+
   return (
     <HeaderWrapper dark={darkMode}>
       <div className="header">
@@ -147,11 +148,7 @@ export const Header = () => {
           <p>{lang.header.greetings[1]}</p>
           <div className="typical">
             <p>I'm a&#160;</p>
-            <Typical
-              steps={['Web Developer.', 1000, 'UX Designer.', 1000, 'Fast Learner.', 1000]}
-              loop={Infinity}
-              wrapper="p"
-            />
+            <p id="typing" />
           </div>
         </div>
       </div>
