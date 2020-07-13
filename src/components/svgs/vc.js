@@ -1,11 +1,34 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes, css } from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleDarkMode } from '../../actions';
+
+const flicker = keyframes`
+  40% {
+    opacity: 0.3;
+  }
+  43% {
+    opacity: 0
+  }
+  80% {
+    opacity: 0.3;
+  }
+  82% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.3;
+  }
+`;
+
+const anime = css`
+  animation: ${flicker} 1s linear forwards 0.1s;
+`;
+
 const Svg = styled.svg`
   #light {
-    opacity: ${(props) => (props.dark ? '0.25' : '0')};
-    fill: rgb(255, 244, 197);
+    opacity: 0;
+    ${(props) => (props.dark ? anime : '')}
   }
   #bulb {
     cursor: pointer;
