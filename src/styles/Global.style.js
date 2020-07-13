@@ -23,4 +23,14 @@ body {
 #root{
     min-height: 100vh;
   }
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: ${(props) => (props.dark ? '#404040' : '#f7f7f7')};
+}
+::-webkit-scrollbar-thumb {
+    background: ${(props) => (props.dark ? '#774069' : '#7bd1ba')};
+    border-radius: 5px;
+}
 `;

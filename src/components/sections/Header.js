@@ -130,7 +130,6 @@ export const Header = () => {
                 </option>
               ))}
             </select>
-            <div className="arrow" />
           </div>
           <DarkModeToggle />
         </div>
