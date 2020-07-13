@@ -40,6 +40,32 @@ export default {
         external: 'https://play-memory-match.netlify.app/',
         github: 'https://github.com/jys77/memory-match',
       },
+      {
+        title: '待办事项我来记',
+        image: '/images/todo.png',
+        desc:
+          '一个待办事项应用，仿照Todoist应用。API部署在firebase上。支持添加待办事项，添加项目分类，勾选完成和删除，将事项添加至特定项目中，对事项设定执行时间，在应用头部快速添加待办事项等。',
+        tech: ['React', 'Custom Hooks', 'firebase'],
+        github: 'https://github.com/jys77/todo-app',
+      },
+      {
+        title: '渥大新生帮帮忙',
+        image: '/images/unihelp.png',
+        desc:
+          '一个渥太华大学GNG5120课程针对计算机专业的模拟创业项目，UniHelp可以为想要留学渥太华大学的申请者提供咨询，学长学姐导览，一对一问题解答，校园信息，发布博客等一站式服务。',
+        tech: ['Vue', 'Vuex', 'Google Authentication'],
+        external: 'http://unihelp.club/',
+        github: 'https://github.com/jys77/UniHelp',
+      },
+      {
+        title: '内容集成小应用',
+        image: '/images/cms.png',
+        desc:
+          '一个内容集成的手机端应用，包含了文章浏览（可以显示点阅率，发布时间等），图片合集（包含不用的分类以及图片阅览器），内置周边商店（包含购物车，数量增删，价格自动计算等）。',
+        tech: ['Vue', 'Vuex', 'Webpack', 'Custom API'],
+        external: 'http://unihelp.club:801/',
+        github: 'https://github.com/jys77/vue-cms-mobile',
+      },
     ],
   },
   contact: {

@@ -51,6 +51,7 @@ export const ProjectWrapper = styled.div`
       line-height: 2;
       box-shadow: 0.5rem 0.5rem 0 0 ${(props) => (props.dark ? 'white' : '#404040')};
       font-family: sans-serif, 'Microsoft YaHei';
+      font-size: 1.2rem;
       @media (max-width: 767px) {
         padding: 1.5rem 0;
         padding: 0.5rem;

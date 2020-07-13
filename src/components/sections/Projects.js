@@ -49,22 +49,26 @@ export const Projects = () => {
                 ))}
               </ul>
               <div className="project-links">
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="nofollow noopener noreferrer"
-                  arial-label="GitHub Link"
-                >
-                  <GitHub />
-                </a>
-                <a
-                  href={project.external}
-                  target="_blank"
-                  rel="nofollow noopener noreferrer"
-                  arial-label="External Link"
-                >
-                  <External />
-                </a>
+                {project.github && (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="nofollow noopener noreferrer"
+                    arial-label="GitHub Link"
+                  >
+                    <GitHub />
+                  </a>
+                )}
+                {project.external && (
+                  <a
+                    href={project.external}
+                    target="_blank"
+                    rel="nofollow noopener noreferrer"
+                    arial-label="External Link"
+                  >
+                    <External />
+                  </a>
+                )}
               </div>
             </div>
             <a
