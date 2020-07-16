@@ -32,12 +32,12 @@ const ProjectsWrapper = styled(Section)`
       font-weight: 700;
       font-family: 'Microsoft YaHei', 'Poppins', sans-serif;
       text-align: center;
-      border: 2px solid ${(props) => (props.dark ? 'white' : '#404040')};
-      box-shadow: 0.5rem 0.5rem ${(props) => (props.dark ? 'white' : '#404040')};
+      border: 2px solid #404040;
+      box-shadow: 0.5rem 0.5rem #404040;
       transition: all 0.2s ease-in-out;
       &:active {
         transform: translate(0.5rem, 0.5rem);
-        box-shadow: 0 0 0 0 ${(props) => (props.dark ? 'white' : '#404040')};
+        box-shadow: 0 0 0 0 #404040;
       }
     }
   }

@@ -50,7 +50,7 @@ const Wrapper = styled(Section)`
       background-color: #f7f7f7;
       &:active {
         transform: translate(0.5rem, 0.5rem);
-        box-shadow: 0 0 0 0 ${(props) => (props.dark ? 'white' : '#404040')};
+        box-shadow: 0 0 0 0 #404040;
       }
     }
   }
