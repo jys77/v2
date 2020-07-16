@@ -19,6 +19,27 @@ const ProjectsWrapper = styled(Section)`
       font-weight: 700;
       font-size: 3.5rem;
     }
+    .button {
+      margin: 0 auto;
+      margin-bottom: 5rem;
+      height: 3rem;
+      width: 9rem;
+      line-height: 3rem;
+      text-decoration: none;
+      color: #404040;
+      background-color: white;
+      font-size: 1rem;
+      font-weight: 700;
+      font-family: 'Microsoft YaHei', 'Poppins', sans-serif;
+      text-align: center;
+      border: 2px solid ${(props) => (props.dark ? 'white' : '#404040')};
+      box-shadow: 0.5rem 0.5rem ${(props) => (props.dark ? 'white' : '#404040')};
+      transition: all 0.2s ease-in-out;
+      &:active {
+        transform: translate(0.5rem, 0.5rem);
+        box-shadow: 0 0 0 0 ${(props) => (props.dark ? 'white' : '#404040')};
+      }
+    }
   }
 `;
 
@@ -81,6 +102,9 @@ export const Projects = () => {
             </a>
           </ProjectWrapper>
         ))}
+        <a className="button" href="https://github.com/jys77" target="__blank">
+          {lang.projects.button}
+        </a>
       </div>
     </ProjectsWrapper>
   );

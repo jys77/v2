@@ -67,6 +67,7 @@ export default {
         github: 'https://github.com/jys77/vue-cms-mobile',
       },
     ],
+    button: '浏览我的GitHub',
   },
   contact: {
     title: '欢迎来聊!',

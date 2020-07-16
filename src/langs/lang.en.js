@@ -67,6 +67,7 @@ export default {
         github: 'https://github.com/jys77/vue-cms-mobile',
       },
     ],
+    button: 'Visit My GitHub',
   },
   contact: {
     title: 'Get In Touch.',
